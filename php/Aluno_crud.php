@@ -34,9 +34,10 @@
         try {
             $con = getConnection();
 
-            $rs = $con->query("SELECT nome, email, cpf FROM aluno");
+            $rs = $con->query("SELECT * FROM aluno");
 
             while ($row = $rs->fetch(PDO::FETCH_OBJ)) {
+                echo $row->id . "<br>";
                 echo $row->nome . "<br>";
                 echo $row->email . "<br>";
                 echo $row->cpf . "<br>---<br>";
